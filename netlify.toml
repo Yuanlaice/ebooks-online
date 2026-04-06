@@ -1,0 +1,15 @@
+# Configuração do Netlify para site estático
+[build]
+  publish = "."
+  command = "echo 'Static site - no build needed'"
+
+[[redirects]]
+  from = "/*"
+  to = "/ebook-store.html"
+  status = 200
+  condition = {path = {eq = "/"}}
+
+[[redirects]]
+  from = "/"
+  to = "/ebook-store.html"
+  status = 301

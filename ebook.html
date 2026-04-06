@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestre do Código - EbookStore</title>
+    <link rel="stylesheet" href="css/ebook-store.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="ebook-store.html" class="logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">EbookStore</span>
+            </a>
+            <nav class="nav">
+                <a href="ebook-store.html">← Voltar para a Loja</a>
+                <a href="ebook-store.html#masculino">Masculino</a>
+                <a href="ebook-store.html#feminino">Feminino</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-search">🔍</button>
+                <a href="carrinho.html" class="btn-cart">
+                    🛒 <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="ebook-store.html">Início</a>
+            <span>/</span>
+            <a href="ebook-store.html#masculino">Masculino</a>
+            <span>/</span>
+            <span class="current">Mestre do Código</span>
+        </div>
+    </nav>
+
+    <!-- Product Detail -->
+    <main class="product-detail">
+        <div class="container">
+            <div class="product-layout">
+                
+                <!-- Left: Cover -->
+                <div class="product-cover-section">
+                    <div class="cover-main">
+                        <img src="https://placehold.co/350x500/667eea/ffffff?text=Mestre+do+Código" alt="Mestre do Código">
+                        <div class="cover-badge">BESTSELLER</div>
+                    </div>
+                    <div class="cover-thumbnails">
+                        <img src="https://placehold.co/80x110/667eea/ffffff?text=1" class="active" alt="Preview 1">
+                        <img src="https://placehold.co/80x110/764ba2/ffffff?text=2" alt="Preview 2">
+                        <img src="https://placehold.co/80x110/f093fb/ffffff?text=3" alt="Preview 3">
+                    </div>
+                </div>
+
+                <!-- Right: Info -->
+                <div class="product-info-section">
+                    <div class="product-header">
+                        <h1>Mestre do Código</h1>
+                        <p class="subtitle">Domine a Programação em 30 Dias - Do Zero ao Profissional</p>
+                    </div>
+
+                    <div class="product-meta">
+                        <div class="rating-main">
+                            <div class="stars-large">★★★★★</div>
+                            <span class="rating-value">4.9</span>
+                            <span class="rating-total">(2,347 avaliações)</span>
+                        </div>
+                        <div class="sales-count">
+                            🔥 5,847 vendidos
+                        </div>
+                    </div>
+
+                    <div class="pricing">
+                        <div class="price-current">
+                            <span class="currency">MZN</span>
+                            <span class="amount">97,00</span>
+                        </div>
+                        <div class="price-old">MZN 197,00</div>
+                        <div class="discount-tag">-51% OFF</div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn btn-buy" id="btn-buy">
+                            🛒 Comprar Agora
+                        </button>
+                        <button class="btn btn-wishlist">
+                            ♡ Adicionar aos Favoritos
+                        </button>
+                    </div>
+
+                    <div class="guarantee">
+                        <span class="guarantee-icon">🛡️</span>
+                        <div class="guarantee-text">
+                            <strong>Garantia de 7 Dias</strong>
+                            <p>Não gostou? Devolvemos 100% do seu dinheiro</p>
+                        </div>
+                    </div>
+
+                    <div class="delivery-info">
+                        <div class="delivery-item">
+                            <span>⚡</span>
+                            <span>Entrega Imediata</span>
+                        </div>
+                        <div class="delivery-item">
+                            <span>📱</span>
+                            <span>Acesso em Todos os Dispositivos</span>
+                        </div>
+                        <div class="delivery-item">
+                            <span>💾</span>
+                            <span>Download Permanente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs Section -->
+            <div class="tabs-section">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="descricao">📖 Descrição</button>
+                    <button class="tab-btn" data-tab="vsl">🎥 Vídeo Apresentação</button>
+                    <button class="tab-btn" data-tab="depoimentos">💬 Depoimentos</button>
+                    <button class="tab-btn" data-tab="avaliacoes">⭐ Avaliações</button>
+                </div>
+
+                <div class="tabs-content">
+                    <!-- Descrição -->
+                    <div id="descricao" class="tab-panel active">
+                        <div class="description-content">
+                            <h2>O Que Você Vai Aprender</h2>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">🎯</div>
+                                    <h4>Fundamentos Sólidos</h4>
+                                    <p>Domine a lógica de programação e estruturas de dados</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">⚡</div>
+                                    <h4>JavaScript Moderno</h4>
+                                    <p>ES6+, async/await, modules e as features mais recentes</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🚀</div>
+                                    <h4>Projetos Reais</h4>
+                                    <p>Construa 5 aplicações completas do zero</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">💼</div>
+                                    <h4>Carreira Dev</h4>
+                                    <p>Como conseguir seu primeiro emprego como programador</p>
+                                </div>
+                            </div>
+
+                            <div class="about-ebook">
+                                <h3>Sobre Este Ebook</h3>
+                                <p>
+                                    "Mestre do Código" é o guia definitivo para quem quer entrar no mundo 
+                                    da programação ou levar suas habilidades ao próximo nível. Com mais de 
+                                    <strong>300 páginas</strong> de conteúdo prático, você vai aprender a pensar 
+                                    como um programador profissional.
+                                </p>
+                                <p>
+                                    Desenvolvido por <strong>João Silva</strong>, desenvolvedor sênior com 
+                                    15 anos de experiência em empresas como Google e Microsoft, este ebook 
+                                    condensa todo o conhecimento necessário para você dominar a programação 
+                                    em apenas 30 dias.
+                                </p>
+                            </div>
+
+                            <div class="ebook-details">
+                                <h3>Detalhes do Produto</h3>
+                                <ul class="details-list">
+                                    <li><strong>Formato:</strong> PDF, EPUB, MOBI</li>
+                                    <li><strong>Páginas:</strong> 320</li>
+                                    <li><strong>Tamanho:</strong> 25 MB</li>
+                                    <li><strong>Idioma:</strong> Português (BR)</li>
+                                    <li><strong>Atualizações:</strong> Gratuitas por 1 ano</li>
+                                    <li><strong>Bônus:</strong> Código fonte dos projetos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VSL - Video Sales Letter -->
+                    <div id="vsl" class="tab-panel">
+                        <div class="vsl-container">
+                            <h2>🎥 Assista e Descubra Como Este Ebook Vai Transformar Sua Carreira</h2>
+                            <div class="video-wrapper">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                    title="Video Sales Letter - Mestre do Código"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="vsl-cta">
+                                <p>📢 <strong>Oferta por Tempo Limitado:</strong> 51% de desconto + Bônus Exclusivos</p>
+                                <button class="btn btn-buy-large" onclick="document.getElementById('btn-buy').click()">
+                                    QUERO COMEÇAR AGORA →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimentos -->
+                    <div id="depoimentos" class="tab-panel">
+                        <div class="testimonials-section">
+                            <h2>O Que Nossos Alunos Dizem</h2>
+                            
+                            <div class="testimonials-grid">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-video">
+                                        <div class="video-thumb">
+                                            <img src="https://placehold.co/300x170/667eea/ffffff?text=Depoimento+1" alt="Depoimento Carlos">
+                                            <div class="play-overlay">▶</div>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>"Consegui meu primeiro emprego como dev após apenas 3 semanas de estudo com este ebook!"</p>
+                                        <div class="testimonial-author">
+                                            <strong>Carlos Mendes</strong>
+                                            <span>Desenvolvedor Jr. @ TechCorp</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="testimonial-card">
+                                    <div class="testimonial-video">
+                                        <div class="video-thumb">
+                                            <img src="https://placehold.co/300x170/e74c3c/ffffff?text=Depoimento+2" alt="Depoimento Ana">
+                                            <div class="play-overlay">▶</div>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>"Mudei de área aos 35 anos e hoje ganho 3x mais. Melhor investimento da minha vida!"</p>
+                                        <div class="testimonial-author">
+                                            <strong>Ana Paula Ribeiro</strong>
+                                            <span>Full Stack Developer</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="testimonial-card">
+                                    <div class="testimonial-video">
+                                        <div class="video-thumb">
+                                            <img src="https://placehold.co/300x170/27ae60/ffffff?text=Depoimento+3" alt="Depoimento Lucas">
+                                            <div class="play-overlay">▶</div>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>"A didática é incrível. Consegui aprender mais em 30 dias do que em 6 meses de faculdade."</p>
+                                        <div class="testimonial-author">
+                                            <strong>Lucas Oliveira</strong>
+                                            <span>Estudante de Engenharia</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-stats">
+                                <div class="stat-box">
+                                    <span class="stat-number">5.847</span>
+                                    <span class="stat-label">Alunos Satisfeitos</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number">94%</span>
+                                    <span class="stat-label">Taxa de Recomendação</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number">4.9/5</span>
+                                    <span class="stat-label">Avaliação Média</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Avaliações com Sistema de Estrelas -->
+                    <div id="avaliacoes" class="tab-panel">
+                        <div class="reviews-section">
+                            <div class="reviews-header">
+                                <div class="overall-rating">
+                                    <div class="rating-big">4.9</div>
+                                    <div class="stars-big">★★★★★</div>
+                                    <p>Baseado em 2.347 avaliações verificadas</p>
+                                </div>
+                                <div class="rating-breakdown">
+                                    <div class="rating-bar">
+                                        <span>5 estrelas</span>
+                                        <div class="bar"><div class="fill" style="width: 85%"></div></div>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>4 estrelas</span>
+                                        <div class="bar"><div class="fill" style="width: 10%"></div></div>
+                                        <span>10%</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>3 estrelas</span>
+                                        <div class="bar"><div class="fill" style="width: 3%"></div></div>
+                                        <span>3%</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>2 estrelas</span>
+                                        <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                        <span>1%</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>1 estrela</span>
+                                        <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                        <span>1%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="add-review">
+                                <h3>Avalie Este Ebook</h3>
+                                <div class="star-rating-input">
+                                    <span>Sua avaliação:</span>
+                                    <div class="stars-select">
+                                        <span class="star" data-rating="1">☆</span>
+                                        <span class="star" data-rating="2">☆</span>
+                                        <span class="star" data-rating="3">☆</span>
+                                        <span class="star" data-rating="4">☆</span>
+                                        <span class="star" data-rating="5">☆</span>
+                                    </div>
+                                </div>
+                                <textarea placeholder="Conte sua experiência com este ebook..." rows="4"></textarea>
+                                <button class="btn btn-primary">Enviar Avaliação</button>
+                            </div>
+
+                            <div class="reviews-list">
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-info">
+                                            <div class="reviewer-avatar">JM</div>
+                                            <div>
+                                                <strong>João Marcelo</strong>
+                                                <div class="review-meta">Verificado | 2 dias atrás</div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">★★★★★</div>
+                                    </div>
+                                    <p class="review-text">
+                                        Excelente material! A didática é clara e os projetos práticos me ajudaram 
+                                        muito a consolidar o aprendizado. Já consegui freelas pagos graças ao que aprendi.
+                                    </p>
+                                </div>
+
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-info">
+                                            <div class="reviewer-avatar">FS</div>
+                                            <div>
+                                                <strong>Fernanda Santos</strong>
+                                                <div class="review-meta">Verificado | 1 semana atrás</div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">★★★★★</div>
+                                    </div>
+                                    <p class="review-text">
+                                        Comprei para meu marido e ele amou! Ele sempre quis aprender a programar 
+                                        e agora já está desenvolvendo projetos próprios. Super recomendo!
+                                    </p>
+                                </div>
+
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-info">
+                                            <div class="reviewer-avatar">RL</div>
+                                            <div>
+                                                <strong>Rafael Lima</strong>
+                                                <div class="review-meta">Verificado | 2 semanas atrás</div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">★★★★☆</div>
+                                    </div>
+                                    <p class="review-text">
+                                        Muito bom! Só senti falta de mais conteúdo sobre backend, mas o que tem 
+                                        é de altíssima qualidade. Vale cada centavo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-section">
+                <h3>Ebooks Relacionados</h3>
+                <div class="related-grid">
+                    <article class="ebook-card small">
+                        <div class="ebook-cover">
+                            <img src="https://placehold.co/150x210/764ba2/ffffff?text=React+Pro" alt="React Pro">
+                        </div>
+                        <div class="ebook-info">
+                            <h4>React Profissional</h4>
+                            <div class="rating">★★★★★ 4.8</div>
+                            <span class="price">MZN 67,00</span>
+                        </div>
+                    </article>
+                    <article class="ebook-card small">
+                        <div class="ebook-cover">
+                            <img src="https://placehold.co/150x210/f093fb/ffffff?text=Node.js+APIs" alt="Node.js APIs">
+                        </div>
+                        <div class="ebook-info">
+                            <h4>Node.js APIs</h4>
+                            <div class="rating">★★★★★ 4.7</div>
+                            <span class="price">MZN 57,00</span>
+                        </div>
+                    </article>
+                    <article class="ebook-card small">
+                        <div class="ebook-cover">
+                            <img src="https://placehold.co/150x210/4facfe/ffffff?text=CSS+Avançado" alt="CSS Avançado">
+                        </div>
+                        <div class="ebook-info">
+                            <h4>CSS Avançado</h4>
+                            <div class="rating">★★★★★ 4.9</div>
+                            <span class="price">MZN 47,00</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>📚 EbookStore</h4>
+                    <p>Transformando vidas através do conhecimento digital.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Categorias</h5>
+                    <a href="ebook-store.html#masculino">Masculino</a>
+                    <a href="ebook-store.html#feminino">Feminino</a>
+                    <a href="ebook-store.html#bestsellers">Mais Vendidos</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Suporte</h5>
+                    <a href="#">FAQ</a>
+                    <a href="#">Contato</a>
+                    <a href="#">Política de Privacidade</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EbookStore. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Compra -->
+    <div id="modal-compra" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Finalizar Compra</h2>
+            <div class="modal-product">
+                <img src="https://placehold.co/100x140/667eea/ffffff?text=📖" alt="Ebook">
+                <div>
+                    <h4>Mestre do Código</h4>
+                    <p class="modal-price">MZN 97,00</p>
+                </div>
+            </div>
+            <form class="checkout-form">
+                <input type="text" placeholder="Nome completo" required>
+                <input type="email" placeholder="Email" required>
+                <button type="submit" class="btn btn-buy">Pagar Agora</button>
+            </form>
+            <p class="secure-payment">🔒 Pagamento 100% seguro via PIX ou Cartão</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/ebook-store.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

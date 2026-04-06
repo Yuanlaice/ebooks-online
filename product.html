@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Ebook - Loja de Ebooks</title>
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">📚 Loja de Ebooks</a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">← Voltar para a página inicial</a>
+                <a href="index.html">Início</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="ebook-page">
+        <div class="container">
+            <div class="ebook-layout">
+                <!-- Capa do Ebook -->
+                <div class="ebook-cover-large">
+                    <img src="https://placehold.co/300x450/667eea/ffffff?text=JS+Moderno" alt="JavaScript Moderno" id="ebook-cover">
+                </div>
+
+                <!-- Informações do Ebook -->
+                <div class="ebook-details">
+                    <div class="ebook-breadcrumb">
+                        <a href="index.html">Início</a> / <span>JavaScript Moderno</span>
+                    </div>
+
+                    <h1 class="ebook-title">JavaScript Moderno</h1>
+                    <p class="ebook-author">por João Silva</p>
+
+                    <div class="ebook-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="reviews-count">4.9 (230 avaliações)</span>
+                    </div>
+
+                    <div class="ebook-price-large">
+                        <span class="current-price">R$ 49,90</span>
+                        <span class="old-price">R$ 79,90</span>
+                        <span class="discount">-38%</span>
+                    </div>
+
+                    <div class="ebook-description">
+                        <h3>Sobre este ebook</h3>
+                        <p>
+                            Aprenda JavaScript moderno de forma prática e eficiente. Este guia completo 
+                            cobre desde os fundamentos até recursos avançados como async/await, 
+                            módulos ES6+, e as melhores práticas da indústria.
+                        </p>
+                        <ul class="features-list">
+                            <li>📱 300+ páginas de conteúdo</li>
+                            <li>🎯 50+ exercícios práticos</li>
+                            <li>💻 Código fonte disponível</li>
+                            <li>🔄 Atualizações gratuitas</li>
+                            <li>📧 Suporte por email</li>
+                        </ul>
+                    </div>
+
+                    <div class="ebook-actions">
+                        <button class="btn btn-primary btn-buy" id="buy-ebook">
+                            📥 Comprar ebook
+                        </button>
+                        <button class="btn btn-secondary" id="preview-ebook">
+                            👁️ Ver amostra grátis
+                        </button>
+                    </div>
+
+                    <div class="ebook-meta">
+                        <div class="meta-item">
+                            <strong>Formato:</strong> PDF, EPUB, MOBI
+                        </div>
+                        <div class="meta-item">
+                            <strong>Tamanho:</strong> 15 MB
+                        </div>
+                        <div class="meta-item">
+                            <strong>Páginas:</strong> 320
+                        </div>
+                        <div class="meta-item">
+                            <strong>Idioma:</strong> Português (BR)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Loja de Ebooks. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Checkout -->
+    <div id="checkout-modal" class="checkout-modal">
+        <div class="checkout-modal-content">
+            <div class="checkout-header">
+                <h2>Finalizar Compra</h2>
+                <button class="close-checkout" id="close-checkout">&times;</button>
+            </div>
+            
+            <div class="checkout-product-summary">
+                <img src="https://placehold.co/80x120/667eea/ffffff?text=📖" alt="Ebook" id="checkout-ebook-img">
+                <div class="checkout-product-info">
+                    <h4 id="checkout-ebook-name">JavaScript Moderno</h4>
+                    <p class="ebook-author-small">por João Silva</p>
+                    <span class="checkout-product-price" id="checkout-price">R$ 49,90</span>
+                </div>
+            </div>
+
+            <form id="checkout-form" class="checkout-form" novalidate>
+                <div class="form-group">
+                    <label for="fullname">Nome Completo *</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Digite seu nome completo" required>
+                    <span class="error-message" id="fullname-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+
+                <div class="checkout-total">
+                    <div class="total-row total-final">
+                        <span>Total:</span>
+                        <span id="checkout-total-price">R$ 49,90</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-checkout">
+                    💳 Pagar e receber ebook
+                </button>
+                
+                <div class="checkout-security">
+                    <span>🔒</span>
+                    <small>Pagamento seguro - Seus dados estão protegidos</small>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay do Checkout -->
+    <div id="checkout-overlay" class="checkout-overlay"></div>
+
+    <script src="js/product.js"></script>
+</body>
+</html>
