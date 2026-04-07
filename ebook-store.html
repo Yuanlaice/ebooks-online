@@ -3,324 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EbookStore - Sua Biblioteca Digital Premium</title>
-    <link rel="stylesheet" href="css/ebook-store.css">
+    <title>EbookStore - Loja de Ebooks Premium</title>
+    <link rel="stylesheet" href="css/modern-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <!-- Header Moderno -->
+    <header class="header-modern">
         <div class="container">
-            <a href="index.html" class="logo">
-                <span class="logo-icon">📚</span>
-                <span class="logo-text">EbookStore</span>
+            <a href="ebook-store.html" class="logo-modern">
+                <div class="logo-icon">📚</div>
+                <div class="logo-text">Ebook<span>Store</span></div>
             </a>
-            <nav class="nav">
-                <a href="#bestsellers">Mais Vendidos</a>
-                <a href="#masculino">Masculino</a>
-                <a href="#feminino">Feminino</a>
-                <a href="#top-rated">Top Avaliados</a>
+            
+            <nav class="nav-modern">
+                <a href="ebook-store.html" class="active">Início</a>
+                <a href="#ebooks">Ebooks</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
             </nav>
-            <div class="header-actions">
+            
+            <div class="header-actions-modern">
                 <div class="auth-container"></div>
-                <button class="btn-search">🔍</button>
-                <a href="carrinho.html" class="btn-cart">
-                    🛒 <span class="cart-count">0</span>
-                </a>
+                <button class="btn-icon" onclick="openSearchModal()">🔍</button>
+                <button class="btn-icon" onclick="openCartModal()">
+                    🛒
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section Simplificada -->
-    <section class="hero">
+    <!-- Hero Section Moderna -->
+    <section class="hero-modern" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Descubra Ebooks Transformadores</h1>
-                <p>Conteúdo exclusivo para impulsionar sua vida pessoal e profissional</p>
+                <h1>Descubra o <span>Melhor</span> Conhecimento em Ebooks</h1>
+                <p>Milhares de ebooks premium sobre desenvolvimento, marketing, finanças e muito mais. Acesse de qualquer lugar, a qualquer hora.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToEbooks()">Ver Ebooks</button>
+                    <button class="btn-secondary" onclick="scrollToCategories()">Explorar</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>10K+</h3>
+                        <p>Ebooks Disponíveis</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50K+</h3>
+                        <p>Leitores Ativos</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9</h3>
+                        <p>Avaliação Média</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500&h=700&fit=crop" alt="Ebook Cover">
+                <div class="floating-card top">
+                    <strong>🔥 Mais Vendido</strong>
+                    <p>Marketing Digital</p>
+                </div>
+                <div class="floating-card bottom">
+                    <strong>⭐ Avaliação</strong>
+                    <p>4.9/5.0 Estrelas</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Categorias Horizontais -->
-    <section class="categories-section">
-        <div class="container">
-            <div class="categories-scroll">
-                <button class="category-btn active" data-category="all">
-                    <span class="category-icon">📚</span>
-                    <span>Todos</span>
-                </button>
-                <button class="category-btn" data-category="bestsellers">
-                    <span class="category-icon">🔥</span>
-                    <span>Mais Vendidos</span>
-                </button>
-                <button class="category-btn" data-category="masculino">
-                    <span class="category-icon">👔</span>
-                    <span>Masculino</span>
-                </button>
-                <button class="category-btn" data-category="feminino">
-                    <span class="category-icon">💄</span>
-                    <span>Feminino</span>
-                </button>
-                <button class="category-btn" data-category="top-rated">
-                    <span class="category-icon">⭐</span>
-                    <span>Top Avaliados</span>
-                </button>
-                <button class="category-btn" data-category="negocios">
-                    <span class="category-icon">💼</span>
-                    <span>Negócios</span>
-                </button>
-                <button class="category-btn" data-category="saude">
-                    <span class="category-icon">💪</span>
-                    <span>Saúde</span>
-                </button>
-                <button class="category-btn" data-category="tecnologia">
-                    <span class="category-icon">💻</span>
-                    <span>Tecnologia</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ebooks - Todos em uma seção -->
-    <section id="bestsellers" class="section featured-section">
+    <!-- Categorias Modernas -->
+    <section class="categories-modern" id="categorias">
         <div class="container">
             <div class="section-header">
-                <h2>� Todos os Ebooks</h2>
-                <p>Escolha entre nossa coleção premium de ebooks</p>
+                <h2>Explore por Categoria</h2>
+                <a href="#" class="btn-view-all">Ver Todos →</a>
             </div>
-            <div class="ebooks-grid" id="all-ebooks">
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterCategory('masculino')">
+                    <div class="icon">�</div>
+                    <h3>Desenvolvimento Pessoal</h3>
+                    <p>150+ ebooks</p>
+                </div>
+                <div class="category-card" onclick="filterCategory('feminino')">
+                    <div class="icon">�</div>
+                    <h3>Carreira & Negócios</h3>
+                    <p>200+ ebooks</p>
+                </div>
+                <div class="category-card" onclick="filterCategory('tecnologia')">
+                    <div class="icon">💻</div>
+                    <h3>Tecnologia</h3>
+                    <p>180+ ebooks</p>
+                </div>
+                <div class="category-card" onclick="filterCategory('marketing')">
+                    <div class="icon">📈</div>
+                    <h3>Marketing</h3>
+                    <p>120+ ebooks</p>
+                </div>
+                <div class="category-card" onclick="filterCategory('financas')">
+                    <div class="icon">�</div>
+                    <h3>Finanças</h3>
+                    <p>90+ ebooks</p>
+                </div>
+                <div class="category-card" onclick="filterCategory('saude')">
+                    <div class="icon">🌱</div>
+                    <h3>Saúde & Bem-estar</h3>
+                    <p>110+ ebooks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ebooks Grid Moderno -->
+    <section class="ebooks-section-modern" id="ebooks">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ebooks em Destaque</h2>
+                <a href="#" class="btn-view-all">Ver Todos →</a>
+            </div>
+            <div class="ebooks-grid-modern" id="ebooks-grid">
                 
                 <!-- BESTSELLERS -->
-                <article class="ebook-card bestseller" data-category="bestsellers">
-                    <div class="badge-bestseller">TOP 1</div>
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(1)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/667eea/ffffff?text=Mestre+do+Código" alt="Mestre do Código">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=1" class="btn-view">Ver Detalhes</a>
+                        <span class="ebook-badge">🔥 Mais Vendido</span>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(1)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(1)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(4.9 - 2.3k avaliações)</span>
-                        </div>
-                        <h3>Mestre do Código</h3>
-                        <p class="ebook-desc">Domine a programação em 30 dias</p>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Tecnologia</div>
+                        <h3 class="ebook-title-modern">Mestre do Código</h3>
+                        <p class="ebook-author">Domine a programação em 30 dias</p>
                         <div class="ebook-footer">
-                            <span class="price">MZN 97,00</span>
-                            <span class="old-price">MZN 197,00</span>
+                            <span class="ebook-price-modern">MZN 97,00</span>
+                            <div class="ebook-rating">⭐ 4.9</div>
                         </div>
                     </div>
                 </article>
 
-                <article class="ebook-card bestseller feminino" data-category="bestsellers feminino">
-                    <div class="badge-bestseller">TOP 2</div>
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(2)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/e74c3c/ffffff?text=Feminino+Poderoso" alt="Feminino Poderoso">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=2" class="btn-view">Ver Detalhes</a>
+                        <span class="ebook-badge">🔥 Mais Vendido</span>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(2)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(2)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(4.8 - 1.8k avaliações)</span>
-                        </div>
-                        <h3>Feminino Poderoso</h3>
-                        <p class="ebook-desc">Desperte sua força interior</p>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Desenvolvimento</div>
+                        <h3 class="ebook-title-modern">Feminino Poderoso</h3>
+                        <p class="ebook-author">Desperte sua força interior</p>
                         <div class="ebook-footer">
-                            <span class="price">MZN 67,00</span>
-                            <span class="old-price">MZN 147,00</span>
+                            <span class="ebook-price-modern">MZN 67,00</span>
+                            <div class="ebook-rating">⭐ 4.8</div>
                         </div>
                     </div>
                 </article>
 
-                <article class="ebook-card bestseller" data-category="bestsellers">
-                    <div class="badge-bestseller">TOP 3</div>
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(3)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/27ae60/ffffff?text=Produtividade+Extrema" alt="Produtividade Extrema">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=3" class="btn-view">Ver Detalhes</a>
+                        <span class="ebook-badge">🔥 Mais Vendido</span>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(3)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(3)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(4.9 - 1.5k avaliações)</span>
-                        </div>
-                        <h3>Produtividade Extrema</h3>
-                        <p class="ebook-desc">Faça mais em menos tempo</p>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Desenvolvimento</div>
+                        <h3 class="ebook-title-modern">Produtividade Extrema</h3>
+                        <p class="ebook-author">Faça mais em menos tempo</p>
                         <div class="ebook-footer">
-                            <span class="price">MZN 57,00</span>
-                            <span class="old-price">MZN 127,00</span>
+                            <span class="ebook-price-modern">MZN 57,00</span>
+                            <div class="ebook-rating">⭐ 4.9</div>
                         </div>
                     </div>
                 </article>
 
-                <article class="ebook-card bestseller" data-category="bestsellers">
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(4)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/9b59b6/ffffff?text=Inteligência+Emocional" alt="Inteligência Emocional">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=4" class="btn-view">Ver Detalhes</a>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(4)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(4)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(4.7 - 980 avaliações)</span>
-                        </div>
-                        <h3>Inteligência Emocional</h3>
-                        <p class="ebook-desc">Controle suas emoções</p>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Desenvolvimento</div>
+                        <h3 class="ebook-title-modern">Inteligência Emocional</h3>
+                        <p class="ebook-author">Controle suas emoções</p>
                         <div class="ebook-footer">
-                            <span class="price">MZN 47,00</span>
-                            <span class="old-price">MZN 97,00</span>
+                            <span class="ebook-price-modern">MZN 47,00</span>
+                            <div class="ebook-rating">⭐ 4.7</div>
                         </div>
                     </div>
                 </article>
 
-                <!-- MASCULINO -->
-                <article class="ebook-card masculino" data-category="masculino">
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(5)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/34495e/ffffff?text=Liderança+Alpha" alt="Liderança Alpha">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=5" class="btn-view">Ver Detalhes</a>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(5)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(5)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(4.8)</span>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Carreira</div>
+                        <h3 class="ebook-title-modern">Liderança Alpha</h3>
+                        <p class="ebook-author">Torne-se um líder nato</p>
+                        <div class="ebook-footer">
+                            <span class="ebook-price-modern">MZN 87,00</span>
+                            <div class="ebook-rating">⭐ 4.8</div>
                         </div>
-                        <h3>Liderança Alpha</h3>
-                        <p class="ebook-desc">Torne-se um líder nato</p>
-                        <span class="price">MZN 87,00</span>
                     </div>
                 </article>
 
-                <article class="ebook-card masculino" data-category="masculino">
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(6)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/2980b9/ffffff?text=Finanças+Inteligentes" alt="Finanças Inteligentes">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=6" class="btn-view">Ver Detalhes</a>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(6)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(6)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★☆</span>
-                            <span class="rating-count">(4.6)</span>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Finanças</div>
+                        <h3 class="ebook-title-modern">Finanças Inteligentes</h3>
+                        <p class="ebook-author">Multiplique seu dinheiro</p>
+                        <div class="ebook-footer">
+                            <span class="ebook-price-modern">MZN 77,00</span>
+                            <div class="ebook-rating">⭐ 4.6</div>
                         </div>
-                        <h3>Finanças Inteligentes</h3>
-                        <p class="ebook-desc">Multiplique seu dinheiro</p>
-                        <span class="price">MZN 77,00</span>
                     </div>
                 </article>
 
-                <article class="ebook-card masculino" data-category="masculino">
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(7)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/16a085/ffffff?text=Fitness+Total" alt="Fitness Total">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=7" class="btn-view">Ver Detalhes</a>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(7)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(7)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(4.9)</span>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Saúde</div>
+                        <h3 class="ebook-title-modern">Fitness Total</h3>
+                        <p class="ebook-author">Transforme seu corpo</p>
+                        <div class="ebook-footer">
+                            <span class="ebook-price-modern">MZN 67,00</span>
+                            <div class="ebook-rating">⭐ 4.9</div>
                         </div>
-                        <h3>Fitness Total</h3>
-                        <p class="ebook-desc">Transforme seu corpo</p>
-                        <span class="price">MZN 67,00</span>
                     </div>
                 </article>
 
-                <article class="ebook-card masculino" data-category="masculino">
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(8)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/c0392b/ffffff?text=Relacionamentos" alt="Relacionamentos">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=8" class="btn-view">Ver Detalhes</a>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(8)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(8)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★☆</span>
-                            <span class="rating-count">(4.5)</span>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Desenvolvimento</div>
+                        <h3 class="ebook-title-modern">Relacionamentos</h3>
+                        <p class="ebook-author">Conquiste e mantenha</p>
+                        <div class="ebook-footer">
+                            <span class="ebook-price-modern">MZN 57,00</span>
+                            <div class="ebook-rating">⭐ 4.5</div>
                         </div>
-                        <h3>Relacionamentos</h3>
-                        <p class="ebook-desc">Conquiste e mantenha</p>
-                        <span class="price">MZN 57,00</span>
                     </div>
                 </article>
 
-                <!-- FEMININO -->
-                <article class="ebook-card feminino" data-category="feminino">
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(9)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/e91e63/ffffff?text=Mulher+Empreendedora" alt="Mulher Empreendedora">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=9" class="btn-view">Ver Detalhes</a>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(9)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(9)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(4.9)</span>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Carreira</div>
+                        <h3 class="ebook-title-modern">Mulher Empreendedora</h3>
+                        <p class="ebook-author">Construa seu império</p>
+                        <div class="ebook-footer">
+                            <span class="ebook-price-modern">MZN 87,00</span>
+                            <div class="ebook-rating">⭐ 4.9</div>
                         </div>
-                        <h3>Mulher Empreendedora</h3>
-                        <p class="ebook-desc">Construa seu império</p>
-                        <span class="price">MZN 87,00</span>
                     </div>
                 </article>
 
-                <article class="ebook-card feminino" data-category="feminino">
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(10)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/9c27b0/ffffff?text=Autoestima+Radiante" alt="Autoestima Radiante">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=10" class="btn-view">Ver Detalhes</a>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(10)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(10)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(4.8)</span>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Desenvolvimento</div>
+                        <h3 class="ebook-title-modern">Autoestima Radiante</h3>
+                        <p class="ebook-author">Brilhe por dentro</p>
+                        <div class="ebook-footer">
+                            <span class="ebook-price-modern">MZN 67,00</span>
+                            <div class="ebook-rating">⭐ 4.8</div>
                         </div>
-                        <h3>Autoestima Radiante</h3>
-                        <p class="ebook-desc">Brilhe por dentro</p>
-                        <span class="price">MZN 67,00</span>
                     </div>
                 </article>
 
-                <article class="ebook-card feminino" data-category="feminino">
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(11)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/00bcd4/ffffff?text=Yoga+e+Meditação" alt="Yoga e Meditação">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=11" class="btn-view">Ver Detalhes</a>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(11)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(11)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(4.9)</span>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Saúde</div>
+                        <h3 class="ebook-title-modern">Yoga e Meditação</h3>
+                        <p class="ebook-author">Encontre seu equilíbrio</p>
+                        <div class="ebook-footer">
+                            <span class="ebook-price-modern">MZN 57,00</span>
+                            <div class="ebook-rating">⭐ 4.9</div>
                         </div>
-                        <h3>Yoga e Meditação</h3>
-                        <p class="ebook-desc">Encontre seu equilíbrio</p>
-                        <span class="price">MZN 57,00</span>
                     </div>
                 </article>
 
-                <article class="ebook-card feminino" data-category="feminino">
-                    <div class="ebook-cover">
+                <article class="ebook-card-modern" onclick="viewEbook(12)">
+                    <div class="ebook-cover-modern">
                         <img src="https://placehold.co/250x350/ff5722/ffffff?text=Moda+e+Estilo" alt="Moda e Estilo">
-                        <div class="ebook-overlay">
-                            <a href="ebook.html?id=12" class="btn-view">Ver Detalhes</a>
+                        <div class="ebook-actions">
+                            <button class="action-btn" onclick="event.stopPropagation(); addToCart(12)" title="Adicionar ao Carrinho">🛒</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); viewEbook(12)" title="Ver Detalhes">👁️</button>
                         </div>
                     </div>
-                    <div class="ebook-info">
-                        <div class="ebook-rating">
-                            <span class="stars">★★★★☆</span>
-                            <span class="rating-count">(4.7)</span>
+                    <div class="ebook-info-modern">
+                        <div class="ebook-category">Estilo</div>
+                        <h3 class="ebook-title-modern">Moda e Estilo</h3>
+                        <p class="ebook-author">Expresse sua essência</p>
+                        <div class="ebook-footer">
+                            <span class="ebook-price-modern">MZN 47,00</span>
+                            <div class="ebook-rating">⭐ 4.7</div>
                         </div>
-                        <h3>Moda e Estilo</h3>
-                        <p class="ebook-desc">Expresse sua essência</p>
-                        <span class="price">MZN 47,00</span>
                     </div>
                 </article>
 
@@ -328,42 +361,62 @@
         </div>
     </section>
 
-    <section class="newsletter">
+    <!-- Newsletter Moderna -->
+    <section class="newsletter-modern">
         <div class="container">
-            <div class="newsletter-content">
-                <h3>📧 Receba Lançamentos Exclusivos</h3>
-                <p>Cadastre-se e seja o primeiro a saber dos novos ebooks</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Seu melhor email" required>
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
-                </form>
-            </div>
+            <h2>Receba Lançamentos Exclusivos</h2>
+            <p>Cadastre-se e seja o primeiro a saber sobre novos ebooks e promoções especiais.</p>
+            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                <input type="email" placeholder="Seu melhor email" required>
+                <button type="submit">Cadastrar</button>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Footer Moderno -->
+    <footer class="footer-modern">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h4>📚 EbookStore</h4>
-                    <p>Transformando vidas através do conhecimento digital.</p>
+                    <h3>Ebook<span>Store</span></h3>
+                    <p>A maior loja de ebooks premium de Moçambique. Conhecimento de qualidade ao alcance de todos.</p>
+                    <div class="footer-social">
+                        <a href="#">📘</a>
+                        <a href="#">📸</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
                 </div>
                 <div class="footer-links">
-                    <h5>Categorias</h5>
-                    <a href="#masculino">Masculino</a>
-                    <a href="#feminino">Feminino</a>
-                    <a href="#bestsellers">Mais Vendidos</a>
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Como Comprar</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
                 </div>
                 <div class="footer-links">
-                    <h5>Suporte</h5>
-                    <a href="#">FAQ</a>
-                    <a href="#">Contato</a>
-                    <a href="#">Política de Privacidade</a>
+                    <h4>Categorias</h4>
+                    <ul>
+                        <li><a href="#">Desenvolvimento</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Finanças</a></li>
+                        <li><a href="#">Tecnologia</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">Ajuda</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 EbookStore. Todos os direitos reservados.</p>
+                <p>&copy; 2024 EbookStore. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
