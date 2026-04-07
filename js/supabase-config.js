@@ -1,9 +1,10 @@
 /**
  * SUPABASE CONFIGURATION
  * Configuração do cliente Supabase para EbookStore
+ * Projeto: app-jose/nano
  */
 
-// Substitua estas variáveis pelas credenciais do seu projeto Supabase
+// CREDENCIAIS DO PROJETO APP-JOSE
 const SUPABASE_URL = 'https://atgtajnsubisvkpbvoej.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_DCqJcSjpvYFykhf8qc05YQ_60PeP70l';
 
